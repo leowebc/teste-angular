@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ListComponent } from './list.component';
+import { By } from '@angular/platform-browser';
 
 describe('ListComponent', () => {
   let component: ListComponent;
@@ -15,7 +16,16 @@ describe('ListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('deve listar as tarefas', () => {
+
+    
+    const ulEl = fixture.debugElement.query(By.css('ul'));
+
+    expect(ulEl).toBeTruthy();
+
+    const liEls = ulEl.queryAll(By.css('li'));
+
+    expect(liEls.length).toBe(5);
+    
   });
 });
