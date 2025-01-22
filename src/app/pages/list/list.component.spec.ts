@@ -18,14 +18,26 @@ describe('ListComponent', () => {
 
   it('deve listar as tarefas', () => {
 
+    const todoSection = fixture.debugElement.query(By.css('[data-testid="todo-list"]'));
     
-    const ulEl = fixture.debugElement.query(By.css('ul'));
+    expect(todoSection).toBeTruthy();
 
-    expect(ulEl).toBeTruthy();
+   const todoItems = todoSection.queryAll(By.css('[data-testid="todo-list-item"]'))
 
-    const liEls = ulEl.queryAll(By.css('li'));
+    expect(todoItems.length).toBe(5);
 
-    expect(liEls.length).toBe(5);
+
+
+    //-------------------------------------------------
+
+    const completedSection = fixture.debugElement.query(By.css('[data-testid="completed-list"]'));
+    
+    expect(completedSection).toBeTruthy();
+
+   const completedeItems = completedSection.queryAll(By.css('[data-testid="completed-list-item"]'));
+
+    expect(completedeItems.length).toBe(5);
+
     
   });
 });
