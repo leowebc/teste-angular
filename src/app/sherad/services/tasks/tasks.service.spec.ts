@@ -33,7 +33,7 @@ describe('TasksService', () => {
 
     });
 
-    const request = httpTestingController.expectOne('/tasks');
+    const request = httpTestingController.expectOne('/api/tasks');
 
     const fakeTasks: Task[] = [
       { title: 'Item 1', completed: false },
