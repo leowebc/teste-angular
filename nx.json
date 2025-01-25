@@ -61,5 +61,5 @@
     "@nx/angular:component": { "style": "scss" }
   },
   "defaultProject": "teste-angular",
-  "nxCloudAccessToken": "MjFjNTczZTUtNGUyNy00YjNkLWIyMjItMTQzNDFjNDE5M2YwfHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "NzFjMzNkYTYtNGRhMi00OTRlLTlkMjQtNzg2MDk3MGNkYmZlfHJlYWQtd3JpdGU="
 }
