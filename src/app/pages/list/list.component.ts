@@ -1,0 +1,33 @@
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Task } from 'src/app/sherad/interfaces/task.interface';
+import { TasksService } from 'src/app/sherad/services/tasks/tasks.service';
+
+
+
+@Component({
+  selector: 'app-list',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './list.component.html',
+  styleUrl: './list.component.scss',
+})
+export class ListComponent implements OnInit {
+
+  tasksService = inject(TasksService);
+
+  tasks = signal<Task[]>([]);
+
+  completedTasks = computed(() => 
+    this.tasks().filter(task => task.completed)
+  )
+
+  pendingTasks = computed(() => 
+    this.tasks().filter(task => !task.completed)
+  )
+
+  ngOnInit(){
+     this.tasksService.getAll().subscribe(tasks => this.tasks.set(tasks));
+  }
+
+}
