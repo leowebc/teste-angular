@@ -1,20 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ListComponent } from './list.component';
 import { By } from '@angular/platform-browser';
-import { TasksService } from 'src/app/sherad/services/tasks/tasks.service';
+import { TasksService } from 'src/app/shared/services/tasks/tasks.service';
 import { of } from 'rxjs';
-import { HttpClient } from "@angular/common/http";
-
-
-
-
-class FakeTasksService implements TasksService{
-  httpClient!: HttpClient;
-  getAll = jest.fn();
-  patch = jest.fn();
-  delete = jest.fn();
-  post = jest.fn();
-}
+import { FakeTasksService } from '@testing/mocks/fake-tasks.service';
 
 
 describe('ListComponent', () => {

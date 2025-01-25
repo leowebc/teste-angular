@@ -1,7 +1,7 @@
 import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Task } from 'src/app/sherad/interfaces/task.interface';
-import { TasksService } from 'src/app/sherad/services/tasks/tasks.service';
+import { Task } from 'src/app/shared/interfaces/task.interface';
+import { TasksService } from 'src/app/shared/services/tasks/tasks.service';
 
 
 
